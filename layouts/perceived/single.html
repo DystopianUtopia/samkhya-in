@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <div style="max-width: 800px; margin: 0 auto; padding: 40px 20px; font-size: 1.05em; line-height: 1.8;">
+    <h1 style="text-align: center;">{{ .Title }}</h1>
+    <p style="text-align: center; color: #666; font-size: 0.9em;">{{ .Date.Format "Jan 2, 2006" }}</p>
+    <div style="margin-top: 30px;">
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}

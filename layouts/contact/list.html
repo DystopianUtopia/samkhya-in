@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <div class="contact-container">
+    <h1 class="contact-title">Contact</h1>
+    <p class="contact-email">
+      <a href="mailto:contact@samkhya-in.org">contact@samkhya-in.org</a>
+    </p>
+  </div>
+
+  <style>
+    .contact-container {
+      text-align: left;
+      padding: 60px 20px;
+    }
+
+    .contact-title {
+      font-size: 0.75em;
+      margin-bottom: 20px;
+    }
+
+    .contact-email a {
+      font-size: 0.6em;
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .contact-email a:hover {
+      color: #007bff; /* optional hover color */
+    }
+  </style>
+{{ end }}

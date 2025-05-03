@@ -1,0 +1,100 @@
+{{ define "main" }}
+  <div class="about-container">
+    <h1 class="about-title">सांख्य</h1>
+    <p class="about-info">
+      In Hindu philosophy, Samkhya sees reality as the interaction of two fundamental principles:
+      <br><br>
+      Purusha (Consciousness) and Prakriti (Nature).
+      <br><br>
+      Purusha represents the observer, the conscious self, while Prakriti represents the material world.
+      For us the simplification of Prakriti is the surrounding environment we inhabit.
+      We believe that architecture, at its core, is the manifestation of this relationship — between humanity and the built environment.
+      <br><br>
+      Samkhya was founded with a deep interest in the critical inquiry of this interaction: how Consciousness and Nature shape and define the spaces we live in.
+      At the heart of our practice is the belief that architecture is not about the mere production of design, but rather about the ongoing investigation into the phenomena of space-making. We seek to understand how we perceive, experience, and engage with the built environment. This inquiry is not about arriving at a final form, but about the continuous exploration of how spaces shape our lives and interactions.
+      
+      We approach architecture as a dynamic process, one rooted in reflection, questioning, and investigation. Through this lens, we see architecture as a living inquiry—a search for understanding, a reflection on how spaces and environments influence and transform us.
+    </p>
+
+    <div class="team">
+      <div class="team-member">
+        <h3>Nihal Galathia</h3>
+        <ul>
+          <li>2012-2017: Bachelor of Architecture, Institute of Environmental Design (IED), Vallabh Vidyanagar.</li>
+          <li>2018-2018: <a href="https://fieldatelier.com/" class="team-link">Field Atelier</a>, Yatin Fulari & Teja Amonkar, Goa.</li>
+          <li>2019-2024: Trained under Architect <a href="https://footprintsearth.com/" class="team-link">Yatin Pandya</a>.</li>
+          <li>2022-2025: Teaching Associate (CEPT University).</li>
+          <li>since 2024: Established design practice with Manushi Gandhi.</li>
+        </ul>
+      </div>
+      
+      <div class="team-member">
+        <h3>Manushi Gandhi</h3>
+        <ul>
+          <li>2014-2018: Bachelor of Interior Design, Institute of Environmental Design (IED), Vallabh Vidyanagar.</li>
+          <li>since 2019: Founded <a href="https://www.instagram.com/barik.atelier/" class="team-link">Barik</a> with Maitri Patel.</li>
+          <li>2019-2022: Trained under Architect <a href="https://footprintsearth.com/" class="team-link">Yatin Pandya</a>.</li>
+          <li>2019-2025: Teaching Associate (CEPT University).</li>
+          <li>since 2024: Established design practice with Nihal Galathia.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .about-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .about-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .about-info {
+      font-size: 0.75em;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .team {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    .team-member {
+      max-width: 300px;
+    }
+
+    .team-member h3 {
+      font-size: 0.75em;
+      margin-bottom: 10px;
+    }
+
+    .team-member ul {
+      list-style: none;
+      padding: 0;
+      font-size: 0.6em;
+    }
+
+    .team-member li {
+      margin-bottom: 10px;
+    }
+  
+    a.team-link {
+      text-decoration: underline;
+      color: inherit; /* Inherits color from surrounding text */
+    }
+
+    a:team-link:hover {
+      color: #007bff; /* Optional hover color */
+      text-decoration: underline; /* Keeps underline on hover */
+    }
+  </style>
+{{ end }}

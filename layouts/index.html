@@ -1,0 +1,58 @@
+{{ define "main" }}
+  <div class="slideshow-wrapper">
+    <div id="slideshow">
+      {{ $slides := resources.Match "images/slides/*" }}
+      {{ range $i, $img := $slides }}
+        <img src="{{ $img.RelPermalink }}" class="{{ if eq $i 0 }}active{{ end }}" alt="Slideshow image" />
+      {{ end }}
+    </div>
+  </div>
+
+  <script>
+    const imgElements = document.querySelectorAll("#slideshow img");
+    let currentIndex = 0;
+
+    setInterval(() => {
+      imgElements[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % imgElements.length;
+      imgElements[currentIndex].classList.add("active");
+    }, 3000);
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      overflow: hidden;
+    }
+
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 70vh;
+      width: 100%;
+    }
+
+    #slideshow {
+      position: relative;
+      width: 80vw;
+      height: 60vh;
+      overflow: hidden;
+    }
+
+    #slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #slideshow img.active {
+      opacity: 1;
+    }
+  </style>
+{{ end }}

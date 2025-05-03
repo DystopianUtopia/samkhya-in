@@ -1,0 +1,102 @@
+{{ define "main" }}
+<main class="single-project">
+  <h1 style="text-align:center; font-size:1.8rem; margin-bottom: 1rem;">{{ .Title }}</h1>
+
+  <div id="image-viewer">
+    <div class="image-frame">
+      <img id="mainImage" src="" alt="Project image" />
+    </div>
+    <div class="nav-buttons">
+      <button onclick="prevImage()" aria-label="Previous image">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button onclick="nextImage()" aria-label="Next image">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</main>
+
+<script>
+  const images = [
+    {{ range .Resources.Match "**.jpg" }}
+      "{{ .RelPermalink }}",
+    {{ end }}
+  ];
+  let currentIndex = 0;
+
+  function showImage(index) {
+    const img = document.getElementById("mainImage");
+    img.src = images[index];
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showImage(currentIndex);
+  });
+</script>
+
+<style>
+  #image-viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 90vw;
+  }
+
+  .image-frame {
+    width: 100%;
+    max-width: 720px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0px;
+    background-color: transparent;
+  }
+
+  #mainImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .nav-buttons button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: inherit;
+  }
+
+  .nav-buttons button:hover svg {
+    stroke: gray;
+  }
+
+  .nav-buttons svg {
+    transition: stroke 0.2s ease;
+  }
+</style>
+{{ end }}
+

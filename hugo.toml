@@ -1,0 +1,42 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'en-us'
+title = 'Samkhya'
+theme = 'PaperMod'
+
+[params]
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  disableThemeToggle = true
+  hideFooter = true
+  customCSS = ["css/custom.css"]
+
+[[menu.main]]
+  identifier = "lived"
+  name = "Lived"
+  url = "/lived/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "conceived"
+  name = "Conceived"
+  url = "/conceived/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "perceived"
+  name = "Perceived"
+  url = "/perceived/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 4
+
+[[menu.main]]
+  identifier = "contact"
+  name = "Contact"
+  url = "/contact/"
+  weight = 5
