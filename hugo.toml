@@ -1,4 +1,4 @@
-baseURL = 'http://localhost:1313/'
+baseURL = 'https://samkhya-in.org/'
 languageCode = 'en-us'
 title = 'Samkhya'
 theme = 'PaperMod'
