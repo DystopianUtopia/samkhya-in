@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://samkhya-in.org/sitemap.xml
