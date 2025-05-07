@@ -2,7 +2,7 @@
 <html lang="en" dir="auto">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.1"><meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.146.5"><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -127,37 +127,142 @@
     </nav>
 </header>
 <main class="main">
+  
   <div class="slideshow-wrapper">
-    <div id="slideshow">
-      
-      
-        <img src="/images/slides/01.jpg" class="active" alt="Slideshow image" />
-      
-        <img src="/images/slides/02.jpg" class="" alt="Slideshow image" />
-      
-        <img src="/images/slides/03.jpg" class="" alt="Slideshow image" />
-      
-        <img src="/images/slides/04.jpg" class="" alt="Slideshow image" />
-      
-        <img src="/images/slides/05.jpg" class="" alt="Slideshow image" />
-      
-        <img src="/images/slides/06.jpg" class="" alt="Slideshow image" />
-      
-        <img src="/images/slides/07.jpg" class="" alt="Slideshow image" />
-      
-        <img src="/images/slides/08.jpg" class="" alt="Slideshow image" />
-      
-        <img src="/images/slides/09.jpg" class="" alt="Slideshow image" />
-      
-        <img src="/images/slides/10.jpg" class="" alt="Slideshow image" />
-      
-        <img src="/images/slides/11.jpg" class="" alt="Slideshow image" />
-      
-    </div>
+    <div id="slideshow"></div>
   </div>
 
+  
+  
+  
+
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image10.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image11.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image12.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image13.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image14.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image15.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image2.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image3.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image4.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image5.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image6.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image7.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/light/image9.png">
+  
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image10.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image11.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image12.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image13.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image14.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image15.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image2.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image3.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image4.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image5.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image6.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image7.png">
+  
+    
+    <link rel="preload" as="image" href="/images/slides/dark/image9.png">
+  
+
   <script>
-    const imgElements = document.querySelectorAll("#slideshow img");
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const basePath = prefersDark ? '/images/slides/dark/' : '/images/slides/light/';
+
+    const images = [
+      
+        "image10.png",
+      
+        "image11.png",
+      
+        "image12.png",
+      
+        "image13.png",
+      
+        "image14.png",
+      
+        "image15.png",
+      
+        "image2.png",
+      
+        "image3.png",
+      
+        "image4.png",
+      
+        "image5.png",
+      
+        "image6.png",
+      
+        "image7.png",
+      
+        "image9.png",
+      
+    ];
+
+    const slideshow = document.getElementById("slideshow");
+
+    images.forEach((img, i) => {
+      const el = document.createElement("img");
+      el.src = basePath + img;
+      el.alt = "Slideshow image";
+      el.classList.add("slide-image");
+      if (i === 0) el.classList.add("active");
+      slideshow.appendChild(el);
+    });
+
+    const imgElements = document.querySelectorAll(".slide-image");
     let currentIndex = 0;
 
     setInterval(() => {
@@ -171,7 +276,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      background-color: var(--body-bg);
       overflow: hidden;
     }
 
@@ -190,7 +295,7 @@
       overflow: hidden;
     }
 
-    #slideshow img {
+    .slide-image {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -199,8 +304,9 @@
       transition: opacity 1s ease-in-out;
     }
 
-    #slideshow img.active {
+    .slide-image.active {
       opacity: 1;
+      z-index: 1;
     }
   </style>
 
